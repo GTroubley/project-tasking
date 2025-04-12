@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import type { Task } from '../../../Types/Types';
+import type { Task } from '../../Types/types.model';
 
 @Component({
     selector: 'app-task',
