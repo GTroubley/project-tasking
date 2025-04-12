@@ -10,8 +10,11 @@ export class TaskingService {
         { title: 'Completed', status: TaskStatus.Completed },
     ]);
 
-    getTasks() {
-        return this.tasksData;
+    // Updates Task with the given status
+    updateTaskStatus(task: Task|undefined, status: TaskStatus) {
+        let rec:Task|undefined = this.tasksData().find((x:Task)=> x.taskID === task?.taskID);
+        if(rec)
+            rec.status = status;
     }
 
     addTask() {

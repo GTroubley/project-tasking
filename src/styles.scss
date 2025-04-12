@@ -23,6 +23,9 @@ body {
 * {
     box-sizing: border-box;
     overflow: hidden;
+    [draggable="true"]:active {
+        opacity: 0.5;
+    }
 }
 
 @font-face {

@@ -3,16 +3,14 @@
     <div class="mainContainer">
         <app-projects-area></app-projects-area>
         <div class="tasksArea">
-            @for (taskColumn of taskingService.taskColumnData(); track
-            taskColumn.status) {
+            @for (taskColumn of taskingService.taskColumnData(); track taskColumn.status) {
             <div class="tasksCol">
                 <div class="tasktitle">{{ taskColumn.title }}</div>
-                <div class="tasksList">
+                <div class="tasksList" (dragover)="onDragOver($event)" (drop)="onTaskDrop($event, taskColumn.status)">
                     @for(task of taskingService.tasksData(); track task.taskID){
-                        @if(taskColumn.status === task.status){
-                            <app-task></app-task>
-                        }
-                    }
+                    @if(taskColumn.status === task.status){
+                    <app-task draggable="true" (dragstart)="onDragStart($event, task)"></app-task>
+                    } }
                 </div>
             </div>
             }

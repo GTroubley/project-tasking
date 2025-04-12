@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { ProjectsAreaComponent } from './projects-area/projects-area.component';
 import { TaskComponent } from './tasks/task/task.component';
-import type { TaskColumn, TaskStatus } from './Types/types.model';
+import type { Task, TaskColumn, TaskStatus } from './Types/types.model';
 import { TaskingService } from './Services/tasking.service';
 
 @Component({
@@ -20,4 +20,20 @@ import { TaskingService } from './Services/tasking.service';
 export class AppComponent {
     title = 'project-tasking';
     taskingService = inject(TaskingService);
+    heldTask?: Task = undefined;
+
+    onDragStart(event: DragEvent, task: Task) {
+        this.heldTask = task;
+        console.log('HOLDING: ' + this.heldTask.taskID);
+    }
+
+    onDragOver(event: DragEvent) {
+        event.preventDefault();
+    }
+
+    onTaskDrop(event: DragEvent, taskColumnStatus: TaskStatus) {
+        event.preventDefault();
+        this.taskingService.updateTaskStatus(this.heldTask, taskColumnStatus);
+        this.heldTask = undefined;
+    }
 }
