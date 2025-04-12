@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+// GLOBAL STYLING FILE
+
+:root {
+    // Coloring
+    --gray-900: #222831;
+    --gray-800: #393e46;
+    --gray-100: #eeeeee;
+    --yellow-900: #ffd369;
+
+    // Fonts
+    --mainFont: "PlayRegular";
+    --titleFont: "PlayBold";
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: "PlayRegular";
+    src: url("../public/fonts/Play/Play-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PlayBold";
+    src: url("../public/fonts/Play/Play-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

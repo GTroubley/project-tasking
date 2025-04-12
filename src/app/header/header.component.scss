@@ -1,0 +1,12 @@
+.title {
+    width: 100%;
+    padding: 2rem;
+    max-height: 2rem;
+    background: wheat;
+    font-family: var(--titleFont);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
