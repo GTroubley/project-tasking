@@ -1,0 +1,26 @@
+.mainContainer{
+    width: 100%;
+    height: 4rem;
+    background: var(--project-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--spacing);
+    border-radius: var(--spacing);
+    transition: background .2s ease-in-out;
+    color: var(--text-primary);font-family: var(--mainFont);
+
+    &:hover{
+        background: var(--project-hover);
+    }
+
+    &:active{
+        background: var(--project-active);
+        border: 2px solid var(--info);
+    }
+
+    & .title{
+        font-family: var(--mainFont);
+    }
+}

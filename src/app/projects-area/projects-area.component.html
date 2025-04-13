@@ -1,38 +1,11 @@
 <div class="mainContainer">
     <div class="projectsList">
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
+        @for (project of taskingService.projectsData(); track project.projectID) {
+            <app-project [project]="project"></app-project>
+        }
     </div>
     <div class="functionalityArea">
-        <button>Create Project</button>
-        <button (click)="onCreateTaskClicked()">Create Task</button>
+        <button (click)="onAddProjectClicked()">Add Project</button>
+        <button (click)="onCreateTaskClicked()">Add Task</button>
     </div>
 </div>

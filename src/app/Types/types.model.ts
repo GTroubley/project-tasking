@@ -1,3 +1,8 @@
+export interface Project{
+    projectID: number;
+    desc: string;
+}
+
 // TYPE for Task - describes a single task
 // Task ID must be unique
 export interface Task{

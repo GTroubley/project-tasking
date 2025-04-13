@@ -40,6 +40,9 @@
     --severity-critical: #9f1239; // Deep red
     --severity-critical-hover: #e11d48; //Brighter red for hover/emphasis
 
+    --button-primary: #627397;
+    --button-hover: #9eb2c9;
+
     // Spacing
     --spacing: 0.5rem;
     --radius: 0.6rem;
@@ -47,6 +50,7 @@
     // Fonts
     --mainFont: "PlayRegular";
     --titleFont: "PlayBold";
+    --otherFont: "SourceCodePro";
 }
 
 html,
@@ -73,6 +77,13 @@ body {
 @font-face {
     font-family: "PlayBold";
     src: url("../public/fonts/Play/Play-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SourceCodePro";
+    src: url("../public/fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }

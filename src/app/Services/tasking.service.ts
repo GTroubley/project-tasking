@@ -1,8 +1,15 @@
 import { Injectable, signal } from '@angular/core';
-import { TaskSeverity, TaskStatus, type Task, type TaskColumn } from '../Types/types.model';
+import {
+    Project,
+    TaskSeverity,
+    TaskStatus,
+    type Task,
+    type TaskColumn,
+} from '../Types/types.model';
 
 @Injectable({ providedIn: 'root' })
 export class TaskingService {
+    projectsData = signal<Project[]>([]);
     tasksData = signal<Task[]>([]);
     taskColumnData = signal<TaskColumn[]>([
         { title: 'Waiting', status: TaskStatus.Waiting },
@@ -11,10 +18,11 @@ export class TaskingService {
     ]);
 
     // Updates Task with the given status
-    updateTaskStatus(task: Task|undefined, status: TaskStatus) {
-        let rec:Task|undefined = this.tasksData().find((x:Task)=> x.taskID === task?.taskID);
-        if(rec)
-            rec.status = status;
+    updateTaskStatus(task: Task | undefined, status: TaskStatus) {
+        let rec: Task | undefined = this.tasksData().find(
+            (x: Task) => x.taskID === task?.taskID
+        );
+        if (rec) rec.status = status;
     }
 
     addTask() {
@@ -31,6 +39,16 @@ export class TaskingService {
         let currentTasks = this.tasksData();
 
         this.tasksData.set([...currentTasks, newTask]);
-        console.log(this.tasksData());
+    }
+
+    addProject() {
+        let newProject: Project = {
+            projectID: this.projectsData().length + 1,
+            desc: 'This project consists of many tasks!',
+        };
+        let currentProjects = this.projectsData();
+
+        this.projectsData.set([...currentProjects, newProject]);
+        console.log(this.projectsData());
     }
 }

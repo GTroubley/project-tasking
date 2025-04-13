@@ -9,6 +9,8 @@
     padding: 0.5rem;
     font-family: var(--mainFont);
     transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid var(--bg-primary);
+
 
     &:hover {
         background: var(--task-hover);
