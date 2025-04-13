@@ -2,8 +2,10 @@
     width: 100%;
     padding: 2rem;
     max-height: 2rem;
-    background: wheat;
+    background: var(--bg-secondary);
     font-family: var(--titleFont);
+    color: var(--text-primary);
+    border-radius: var(--radius);
     font-size: 2rem;
     display: flex;
     flex-direction: column;

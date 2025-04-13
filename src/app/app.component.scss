@@ -1,15 +1,16 @@
 .base {
     width: 100%;
-    height: 100vh;
-    background: gray;
+    height: 100%;
+    background: var(--bg-primary);
     // display: flex;
     // flex-direction: column;
     // justify-content: flex-start;
     display: grid;
     grid-template-rows: min-content auto;
     grid-template-columns: repeat(1,1fr);
-    gap: 0.5rem;
-    padding: 0.5rem;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    font-family: var(--titleFont);
 
     & app-header {
         width: 100%;
@@ -18,20 +19,22 @@
     & .mainContainer {
         width: 100%;
         height: 100%;
-        background-color: bisque;
+        background-color: var(--bg-secondary);
         display: grid;
         grid-template-rows: repeat(1, 1fr);
         grid-template-columns: min-content auto;
-        gap: 0.5rem;
+        gap: var(--spacing);
+        border-radius: var(--radius);
 
         & .tasksArea {
             width: 100%;
             height: 100%;
-            background: brown;
+            background: var(--bg-secondary);
             display: grid;
             grid-template-rows: repeat(1, 1fr);
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
+            gap: var(--spacing);
+            padding: var(--spacing);//not sure about that, makes it too wide?!
 
             & > .tasksCol {
                 width: 100%;
@@ -39,30 +42,38 @@
                 display: grid;
                 grid-template-rows: min-content auto;
                 grid-template-columns: repeat(1, 1fr);
-                gap: 0.5rem;
-                background: cadetblue;
-                padding: 0.5rem;
+                gap: var(--spacing);
+                border-radius: var(--radius);
+                // padding: var(--spacing);
+                background: var(--bg-quaternary);
 
                 & .tasktitle {
                     width: 100%;
-                    height: 2rem;
-                    background: cyan;
+                    height: 3rem;
+                    background: var(--bg-quaternary);
+                    color: var(--text-primary);
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 2px solid var(--info);
+                    border-top-left-radius: var(--radius);
+                    border-top-right-radius: var(--radius);
+                    padding: var(--spacing);
+                    // border-radius: var(--radius);
                 }
 
                 & .tasksList {
                     width: 100%;
                     height: 100%;
-                    background: lightcyan;
-                    padding: 0.5rem;
+                    background: var(--bg-quaternary);
+                    padding: 1rem;
+                    gap: var(--spacing);
+                    border-radius: var(--radius);
                     display: grid;
                     align-content: start;
-                    gap: 0.5rem;
                     overflow-y: auto;
-
-                    & > app-task{
-                        width: 100%;
-                        height: 3rem;
-                    }
+                    grid-auto-rows: min-content;
                 }
             }
         }

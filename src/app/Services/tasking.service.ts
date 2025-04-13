@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { TaskStatus, type Task, type TaskColumn } from '../Types/types.model';
+import { TaskSeverity, TaskStatus, type Task, type TaskColumn } from '../Types/types.model';
 
 @Injectable({ providedIn: 'root' })
 export class TaskingService {
@@ -22,8 +22,8 @@ export class TaskingService {
         let newTask: Task = {
             projectID: 1,
             taskID: rand,
-            desc: `Task ${rand}`,
-            severity: 1,
+            desc: `This is Task-${rand}, bla bla bla bla bla bla`,
+            severity: Math.floor(Math.random() * 4),
             assignee: 'BEL',
             status: 0,
         };

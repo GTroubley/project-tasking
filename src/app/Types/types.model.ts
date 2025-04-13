@@ -4,7 +4,7 @@ export interface Task{
     projectID: number;
     taskID: number;         
     desc: string;
-    severity: number;
+    severity: TaskSeverity;
     assignee: string;
     status: TaskStatus;
 }
@@ -21,4 +21,12 @@ export enum TaskStatus{
     Waiting,
     WorkingOn,
     Completed
+}
+
+// ENUMERATION for task severity - categorizes the urgency of a task
+export enum TaskSeverity{
+    Low,
+    Medium,
+    High,
+    Critical
 }

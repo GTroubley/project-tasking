@@ -1,11 +1,48 @@
 // GLOBAL STYLING FILE
 
 :root {
-    // Coloring
-    --gray-900: #222831;
-    --gray-800: #393e46;
-    --gray-100: #eeeeee;
-    --yellow-900: #ffd369;
+    // Basic background colors
+    --bg-primary: #0f1115; // Primary dark background
+    --bg-secondary: #151921; // Slightly lighter background
+    --bg-tertiary: #1c212b; // For elevated components
+    --bg-quaternary: #252a35; // For modals and popovers
+
+    // Task item colors
+    --task-normal: #2e3440; // Default task background
+    --task-hover: #3b4252; // Hover state
+    --task-active: #434c5e; // Selected/active task
+    --task-completed: #4c566a; // Completed tasks (more muted)
+
+    // Project item colors - slightly different hue than tasks
+    --project-normal: #2d3748; // Default project background
+    --project-hover: #3a4a63; // Hover state
+    --project-active: #455a78; // Selected/active project
+
+    // Status/functional colors
+    --success: #a3be8c; // Success indicators, completed items
+    --warning: #ebcb8b; // Warning indicators
+    --error: #bf616a; // Error indicators
+    --info: #88c0d0; // Info/notification indicators
+
+    // Text colors
+    --text-primary: #eceff4; // Primary text
+    --text-secondary: #d8dee9; // Secondary text
+    --text-muted: #9ba3b0; // Muted text for less important info
+    --text-on-accent: #eceff4; // Text on accent color backgrounds
+
+    // Severity level colors
+    --severity-low: #4d7c0f; // Subdued green
+    --severity-low-hover: #84cc16; // Brighter green for hover/emphasis
+    --severity-medium: #ca8a04; // Amber/gold
+    --severity-medium-hover: #eab308; // Brighter gold for hover/emphasis
+    --severity-high: #b45309; // Orange/amber
+    --severity-high-hover: #f59e0b; // Brighter orange for hover/emphasis
+    --severity-critical: #9f1239; // Deep red
+    --severity-critical-hover: #e11d48; //Brighter red for hover/emphasis
+
+    // Spacing
+    --spacing: 0.5rem;
+    --radius: 0.6rem;
 
     // Fonts
     --mainFont: "PlayRegular";
@@ -18,14 +55,12 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
 }
 
 * {
     box-sizing: border-box;
     overflow: hidden;
-    [draggable="true"]:active {
-        opacity: 0.5;
-    }
 }
 
 @font-face {

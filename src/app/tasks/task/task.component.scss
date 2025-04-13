@@ -1,5 +1,91 @@
-.mainContainer{
+.mainContainer {
     width: 100%;
-    height: 3rem;
-    background: darkcyan;
+    height: 4.5rem;
+    background: var(--task-normal);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    font-family: var(--mainFont);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background: var(--task-hover);
+        transition: all 0.2s ease-in-out;
+
+        & .upper{
+            & .severity.low{
+                background: var(--severity-low-hover);
+            }
+            & .severity.medium{
+                background: var(--severity-medium-hover);
+            }
+            & .severity.high{
+                background: var(--severity-high-hover);
+            }
+            & .severity.critical{
+                background: var(--severity-critical-hover);
+            }
+        }
+    }
+
+    &:active {
+        background: var(--task-active);
+    }
+
+    & .upper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        & .severity {
+            width: 11rem;
+            height: 80%;min-height: 80%;
+            border-radius: 1rem;
+            text-align: center;
+            font-family: var(--titleFont);
+            font-size: 1.05rem;
+            color: var(--bg-primary);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .severity.low {
+            background: var(--severity-low);
+        }
+
+        .severity.medium {
+            background: var(--severity-medium);
+        }
+
+        .severity.high {
+            background: var(--severity-high);
+        }
+        .severity.critical {
+            background: var(--severity-critical);
+        }
+
+        & .id {
+            width: 100%;
+            padding-left: 1rem;
+            font-family: var(--titleFont);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+        & .assignee {
+            width: 100%;
+            text-align: right;
+            color: var(--text-primary);
+        }
+    }
+    & .lower {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: var(--text-primary);
+    }
 }

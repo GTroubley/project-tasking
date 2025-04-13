@@ -9,7 +9,7 @@
                 <div class="tasksList" (dragover)="onDragOver($event)" (drop)="onTaskDrop($event, taskColumn.status)">
                     @for(task of taskingService.tasksData(); track task.taskID){
                     @if(taskColumn.status === task.status){
-                    <app-task draggable="true" (dragstart)="onDragStart($event, task)"></app-task>
+                    <app-task [task]="task" draggable="true" (dragstart)="onDragStart($event, task)"></app-task>
                     } }
                 </div>
             </div>

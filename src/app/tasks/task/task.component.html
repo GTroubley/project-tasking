@@ -1,1 +1,10 @@
-<div class="mainContainer"></div>
+<div class="mainContainer">
+    <div class="upper">
+        <div class="severity" [ngClass]="getSeverityClass(task.severity)">{{getSeverityText(task.severity)}}</div>
+        <div class="id">Task-{{task.taskID}}</div>
+        <div class="assignee">Responsible: {{task.assignee}}</div>
+    </div>
+    <div class="lower">
+        <div class="desc">{{ task.desc }}</div>
+    </div>
+</div>
