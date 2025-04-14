@@ -1,4 +1,4 @@
-<div class="mainContainer">
+<div class="mainContainer" [ngClass]="{selectedProject: project.projectID === taskingService.selectedProjectID()}" >
     <div class="title">Project-{{project.projectID}}</div>
     <div class="desc">{{project.desc}}</div>
 </div>

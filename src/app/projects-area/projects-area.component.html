@@ -1,11 +1,11 @@
 <div class="mainContainer">
     <div class="projectsList">
         @for (project of taskingService.projectsData(); track project.projectID) {
-            <app-project [project]="project"></app-project>
+            <app-project [project]="project" (click)="onProjectClick(project)"></app-project>
         }
     </div>
     <div class="functionalityArea">
-        <button (click)="onAddProjectClicked()">Add Project</button>
-        <button (click)="onCreateTaskClicked()">Add Task</button>
+        <button (click)="onAddProjectClicked()">ADD PROJECT</button>
+        <button (click)="onCreateTaskClicked()" [disabled]="taskingService.shouldDisable()">ADD TASK</button>
     </div>
 </div>

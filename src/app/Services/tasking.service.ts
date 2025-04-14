@@ -16,6 +16,7 @@ export class TaskingService {
         { title: 'Working On', status: TaskStatus.WorkingOn },
         { title: 'Completed', status: TaskStatus.Completed },
     ]);
+    selectedProjectID = signal<number | null>(null);
 
     // Updates Task with the given status
     updateTaskStatus(task: Task | undefined, status: TaskStatus) {
@@ -28,8 +29,8 @@ export class TaskingService {
     addTask() {
         let rand = Math.floor(Math.random() * 10000);
         let newTask: Task = {
-            projectID: 1,
-            taskID: rand,
+            projectID: this.selectedProjectID()!,
+            taskID: this.tasksData().length,
             desc: `This is Task-${rand}, bla bla bla bla bla bla`,
             severity: Math.floor(Math.random() * 4),
             assignee: 'BEL',
@@ -39,6 +40,7 @@ export class TaskingService {
         let currentTasks = this.tasksData();
 
         this.tasksData.set([...currentTasks, newTask]);
+        console.log(this.tasksData());
     }
 
     addProject() {
@@ -50,5 +52,17 @@ export class TaskingService {
 
         this.projectsData.set([...currentProjects, newProject]);
         console.log(this.projectsData());
+    }
+
+    selectProject(projectID:number|null){
+        this.selectedProjectID.set(projectID);
+    }
+
+    getSelectedProjectTasks(){
+        return this.tasksData().filter(task=> task.projectID === this.selectedProjectID());
+    }
+
+    shouldDisable(){
+        return this.selectedProjectID() === null;
     }
 }

@@ -23,4 +23,9 @@
     & .title{
         font-family: var(--mainFont);
     }
+    
+}
+
+.selectedProject{
+    border: 2px solid var(--info);
 }
