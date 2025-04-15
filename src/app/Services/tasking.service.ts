@@ -67,7 +67,7 @@ export class TaskingService {
     }
 
     selectProject(projectID: number | null) {
-        this.selectedProjectID.set(projectID);
+        this.selectedProjectID.set(projectID === this.selectedProjectID() ? null : projectID);
     }
 
     getSelectedProjectTasks() {

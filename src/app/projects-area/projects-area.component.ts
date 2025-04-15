@@ -21,8 +21,4 @@ export class ProjectsAreaComponent {
     onAddProjectClicked(){
         this.taskingService.addProject();
     }
-
-    onProjectClick(project:Project){
-        this.taskingService.selectProject(project.projectID);
-    }
 }

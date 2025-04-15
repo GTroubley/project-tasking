@@ -1,7 +1,7 @@
 <div class="mainContainer">
     <div class="projectsList">
         @for (project of taskingService.projectsData(); track project.projectID) {
-            <app-project [project]="project" (click)="onProjectClick(project)"></app-project>
+            <app-project [project]="project" (click)=" this.taskingService.selectProject(project.projectID)"></app-project>
         }
     </div>
     <div class="functionalityArea">

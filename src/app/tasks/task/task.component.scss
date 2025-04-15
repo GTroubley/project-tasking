@@ -10,8 +10,8 @@
     font-family: var(--mainFont);
     transition: all 0.2s ease-in-out;
     border-bottom: 2px solid var(--bg-primary);
-
-
+    border-top: 2px solid var(--task-active);
+    
     &:hover {
         background: var(--task-hover);
         transition: all 0.2s ease-in-out;

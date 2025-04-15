@@ -7,7 +7,7 @@
     // justify-content: flex-start;
     display: grid;
     grid-template-rows: min-content auto;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--spacing);
     padding: var(--spacing);
     font-family: var(--titleFont);
@@ -34,7 +34,7 @@
             grid-template-rows: repeat(1, 1fr);
             grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing);
-            padding: var(--spacing);//not sure about that, makes it too wide?!
+            padding: var(--spacing); //not sure about that, makes it too wide?!
 
             & > .tasksCol {
                 width: 100%;
@@ -47,20 +47,34 @@
                 // padding: var(--spacing);
                 background: var(--bg-quaternary);
 
+                &:nth-child(1) {
+                    & .tasktitle {
+                        border-bottom: 4px solid var(--info);
+                    }
+                }
+                &:nth-child(2) {
+                    & .tasktitle {
+                        border-bottom: 4px solid var(--warning);
+                    }
+                }
+                &:nth-child(3) {
+                    & .tasktitle {
+                        border-bottom: 4px solid var(--success);
+                    }
+                }
+
                 & .tasktitle {
                     width: 100%;
                     height: 3rem;
                     background: var(--bg-quaternary);
                     color: var(--text-primary);
-                    font-size: 1.5rem;
+                    font-size: 1.7rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border-bottom: 2px solid var(--info);
                     border-top-left-radius: var(--radius);
                     border-top-right-radius: var(--radius);
                     padding: var(--spacing);
-                    // border-radius: var(--radius);
                 }
 
                 & .tasksList {
