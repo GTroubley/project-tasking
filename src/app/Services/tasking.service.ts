@@ -21,9 +21,10 @@ export class TaskingService {
     selectedProjectID = signal<number | null>(null);
 
     constructor() {
-        console.log("load");
-        this.tasksData.set(this.sessionService.loadTasksData('tasksData'));
-        this.projectsData.set(this.sessionService.loadTasksData('projectsData'));
+        let tasks = this.sessionService.loadTasksData('tasksData');
+        let projects = this.sessionService.loadTasksData('projectsData');
+        if (tasks) this.tasksData.set(tasks);
+        if (projects) this.projectsData.set(projects);
     }
 
     // Updates Task with the given status
