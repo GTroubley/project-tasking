@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, OnInit, signal } from '@angular/core';
 import {
     Project,
     TaskSeverity,
@@ -6,9 +6,11 @@ import {
     type Task,
     type TaskColumn,
 } from '../Types/types.model';
+import { SessionService } from './session.service';
 
 @Injectable({ providedIn: 'root' })
 export class TaskingService {
+    sessionService = inject(SessionService);
     projectsData = signal<Project[]>([]);
     tasksData = signal<Task[]>([]);
     taskColumnData = signal<TaskColumn[]>([
@@ -18,12 +20,19 @@ export class TaskingService {
     ]);
     selectedProjectID = signal<number | null>(null);
 
+    constructor() {
+        console.log("load");
+        this.tasksData.set(this.sessionService.loadTasksData('tasksData'));
+        this.projectsData.set(this.sessionService.loadTasksData('projectsData'));
+    }
+
     // Updates Task with the given status
     updateTaskStatus(task: Task | undefined, status: TaskStatus) {
         let rec: Task | undefined = this.tasksData().find(
             (x: Task) => x.taskID === task?.taskID
         );
         if (rec) rec.status = status;
+        this.sessionService.saveData(this.tasksData(), 'tasksData');
     }
 
     addTask() {
@@ -41,6 +50,7 @@ export class TaskingService {
 
         this.tasksData.set([...currentTasks, newTask]);
         console.log(this.tasksData());
+        this.sessionService.saveData(this.tasksData(), 'tasksData');
     }
 
     addProject() {
@@ -52,17 +62,20 @@ export class TaskingService {
 
         this.projectsData.set([...currentProjects, newProject]);
         console.log(this.projectsData());
+        this.sessionService.saveData(this.projectsData(), 'projectsData');
     }
 
-    selectProject(projectID:number|null){
+    selectProject(projectID: number | null) {
         this.selectedProjectID.set(projectID);
     }
 
-    getSelectedProjectTasks(){
-        return this.tasksData().filter(task=> task.projectID === this.selectedProjectID());
+    getSelectedProjectTasks() {
+        return this.tasksData().filter(
+            (task) => task.projectID === this.selectedProjectID()
+        );
     }
 
-    shouldDisable(){
+    shouldDisable() {
         return this.selectedProjectID() === null;
     }
 }
