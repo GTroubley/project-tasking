@@ -50,9 +50,12 @@
     --radius: 0.6rem;
 
     // Fonts
-    --mainFont: "PlayRegular";
-    --titleFont: "PlayBold";
-    --otherFont: "SourceCodePro";
+    --mainFont: "Play";
+    --titleFont: "Play";
+    --otherFont: "Source Code Pro";
+    // --mainFont: "Play";
+    // --titleFont: "Play";
+    // --otherFont: "Source Code Pro";
 }
 
 html,
@@ -68,6 +71,8 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
+
+// @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 @font-face {
     font-family: "PlayRegular";
