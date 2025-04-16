@@ -1,0 +1,51 @@
+<div id="outsideArea" (click)="tryCloseForm($event)" class="mainContainer">
+    @if(formsService.form().form === 0){
+    <div class="form">
+        <div class="title">New Project</div>
+        <form (ngSubmit)="onProjectFormSubmit()">
+            <div class="label">Project Title</div>
+            <input
+                type="text"
+                name="projectTitle"
+                id="projectTitle"
+                [(ngModel)]="projectTitle"
+            />
+            <button>Create Project</button>
+        </form>
+    </div>
+    } @if(formsService.form().form === 1){
+    <div class="form">
+        <div class="title">New Task</div>
+        <form (ngSubmit)="onTaskFormSubmit()">
+            <div class="label">Task Title</div>
+            <input
+                type="text"
+                name="taskTitle"
+                id="taskTitle"
+                [(ngModel)]="taskTitle"
+            />
+            <div class="label">Severity</div>
+            <select
+                matNativeControl
+                required
+                name="taskSeverity"
+                id="taskSeverity"
+                [(ngModel)]="taskSeverity"
+            >
+                <option value="0">Low</option>
+                <option value="1">Medium</option>
+                <option value="2">High</option>
+                <option value="3">Critical</option>
+            </select>
+            <div class="label">Assignee</div>
+            <input
+                type="text"
+                name="taskAssignee"
+                id="taskAssignee"
+                [(ngModel)]="taskAssignee"
+            />
+            <button>Create Task</button>
+        </form>
+    </div>
+    }
+</div>

@@ -1,0 +1,97 @@
+.mainContainer {
+    width: 100%;
+    height: 100%;
+    background: #24242466;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .form {
+        width: 400px;
+        height: fit-content;
+        background: var(--bg-primary);
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 1px 0.25rem var(--bg-primary);
+        padding: var(--spacing);
+
+        & .title {
+            height: 30%;
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        & form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: var(--spacing);
+
+            & > .label {
+                width: 100%;
+                align-self: flex-start;
+                font-size: 1.5rem;
+                color: var(--text-primary);
+            }
+
+            & > input {
+                width: 100%;
+                height: 3rem;
+                border-radius: var(--radius);
+                background: var(--bg-tertiary);
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.2rem;
+
+                &:empty {
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            & select {
+                width: 100%;
+                height: 3rem;
+                border-radius: var(--radius);
+                background: var(--bg-tertiary);
+                font-size: 1.2rem;
+                color: var(--text-primary);
+                border: none;
+
+                &:focus {
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            & > button {
+                width: 10rem;
+                height: 2rem;
+                background: var(--button-primary);
+                border: none;
+                border-radius: var(--radius);
+                transition: background 0.2s ease-in-out;
+                font-family: var(--otherFont);
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: var(--bg-primary);
+
+                &:hover {
+                    background: var(--button-hover);
+                    color: var(--bg-quaternary);
+                }
+
+                &:active {
+                    background: var(--button-active);
+                }
+            }
+        }
+    }
+}

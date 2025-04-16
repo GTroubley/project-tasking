@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { TaskingService } from '../Services/tasking.service';
 import { ProjectComponent } from "./project/project.component";
-import { Project } from '../Types/types.model';
+import { FormType, Project } from '../Types/types.model';
 import { CommonModule } from '@angular/common';
+import { FormsService } from '../Services/forms.service';
 
 @Component({
     selector: 'app-projects-area',
@@ -12,13 +13,16 @@ import { CommonModule } from '@angular/common';
 })
 export class ProjectsAreaComponent {
     taskingService = inject(TaskingService);
+    formsService = inject(FormsService);
     selectedProject?: Project = undefined;
 
     onCreateTaskClicked(){
-        this.taskingService.addTask();
+        this.formsService.form().form = FormType.Task;
+        this.formsService.form().isOpen = true;
     }
 
     onAddProjectClicked(){
-        this.taskingService.addProject();
+        this.formsService.form().form = FormType.Project;
+        this.formsService.form().isOpen = true;
     }
 }

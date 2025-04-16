@@ -35,3 +35,23 @@ export enum TaskSeverity{
     High,
     Critical
 }
+
+export enum FormType{
+    Project,
+    Task
+}
+
+export interface FormView{
+    form?: FormType;
+    isOpen: boolean;
+}
+
+export interface ProjectFormInput{
+    projectTitle: string;
+}
+
+export interface TaskFormInput{
+    taskTitle: string;
+    taskSeverity: number;
+    taskAssignee: string;
+}

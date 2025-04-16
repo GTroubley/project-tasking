@@ -1,6 +1,8 @@
 import { inject, Injectable, OnInit, signal } from '@angular/core';
 import {
     Project,
+    ProjectFormInput,
+    TaskFormInput,
     TaskSeverity,
     TaskStatus,
     type Task,
@@ -36,14 +38,13 @@ export class TaskingService {
         this.sessionService.saveData(this.tasksData(), 'tasksData');
     }
 
-    addTask() {
-        let rand = Math.floor(Math.random() * 10000);
+    addTask(data: TaskFormInput) {
         let newTask: Task = {
             projectID: this.selectedProjectID()!,
             taskID: this.tasksData().length,
-            desc: `This is Task-${rand}, bla bla bla bla bla bla`,
-            severity: Math.floor(Math.random() * 4),
-            assignee: 'BEL',
+            desc: data.taskTitle,
+            severity: data.taskSeverity,
+            assignee: data.taskAssignee,
             status: 0,
         };
 
@@ -54,10 +55,10 @@ export class TaskingService {
         this.sessionService.saveData(this.tasksData(), 'tasksData');
     }
 
-    addProject() {
+    addProject(data: ProjectFormInput) {
         let newProject: Project = {
             projectID: this.projectsData().length + 1,
-            desc: 'This project consists of many tasks!',
+            desc: data.projectTitle,
         };
         let currentProjects = this.projectsData();
 

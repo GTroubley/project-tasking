@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
     styleUrl: './task.component.scss',
 })
 export class TaskComponent {
-    // task!: Task;
     @Input({ required: true }) task!: Task;
 
     getSeverityClass(severity: TaskSeverity) {
@@ -27,7 +26,7 @@ export class TaskComponent {
         }
     }
 
-    getSeverityText(severity: TaskSeverity){
+    getSeverityText(severity: TaskSeverity) {
         switch (severity) {
             case 0:
                 return 'Low';
