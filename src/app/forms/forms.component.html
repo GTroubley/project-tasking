@@ -2,27 +2,29 @@
     @if(formsService.form().form === 0){
     <div class="form">
         <div class="title">New Project</div>
-        <form (ngSubmit)="onProjectFormSubmit()">
+        <form #projectForm="ngForm" (ngSubmit)="onProjectFormSubmit()">
             <div class="label">Project Title</div>
             <input
                 type="text"
                 name="projectTitle"
                 id="projectTitle"
                 [(ngModel)]="projectTitle"
+                required
             />
-            <button>Create Project</button>
+            <button [disabled]="!projectForm.valid">Create Project</button>
         </form>
     </div>
     } @if(formsService.form().form === 1){
     <div class="form">
         <div class="title">New Task</div>
-        <form (ngSubmit)="onTaskFormSubmit()">
+        <form #taskForm="ngForm" (ngSubmit)="onTaskFormSubmit()">
             <div class="label">Task Title</div>
             <input
                 type="text"
                 name="taskTitle"
                 id="taskTitle"
                 [(ngModel)]="taskTitle"
+                required
             />
             <div class="label">Severity</div>
             <select
@@ -31,6 +33,7 @@
                 name="taskSeverity"
                 id="taskSeverity"
                 [(ngModel)]="taskSeverity"
+                required
             >
                 <option value="0">Low</option>
                 <option value="1">Medium</option>
@@ -43,8 +46,9 @@
                 name="taskAssignee"
                 id="taskAssignee"
                 [(ngModel)]="taskAssignee"
+                required
             />
-            <button>Create Task</button>
+            <button [disabled]="!taskForm.valid">Create Task</button>
         </form>
     </div>
     }

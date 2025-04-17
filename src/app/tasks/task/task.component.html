@@ -2,7 +2,7 @@
     <div class="upper">
         <div class="severity" [ngClass]="getSeverityClass(task.severity)">{{getSeverityText(task.severity)}}</div>
         <div class="id">Task-{{task.taskID}}</div>
-        <div class="assignee">Assignee: {{task.assignee}}</div>
+        <div class="assignee">{{task.assignee}}</div>
     </div>
     <div class="lower">
         <div class="desc">{{ task.desc }}</div>

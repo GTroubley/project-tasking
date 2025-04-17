@@ -1,9 +1,8 @@
-import { inject, Injectable, OnInit, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import {
     Project,
     ProjectFormInput,
     TaskFormInput,
-    TaskSeverity,
     TaskStatus,
     type Task,
     type TaskColumn,
