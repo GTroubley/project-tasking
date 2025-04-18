@@ -1,6 +1,14 @@
 # ProjectTasking
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+ProjectTasking is my first Angular project and it is a simple task management application. I developed the core functionality and design in under a week during my spare time.
+
+The app allows users to create projects, and within each project, they can add tasks. Each task can have one of three statuses to track progress:
+
+- Waiting
+- In Progress
+- Completed
+
+The goal was to keep it lightweight and straightforward, focusing on learning Angular and building a clean, functional user experience.
 
 ## Development server
 
