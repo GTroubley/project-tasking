@@ -9,6 +9,8 @@ The app allows users to create projects, and within each project, they can add t
 - Completed
 
 The goal was to keep it lightweight and straightforward, focusing on learning Angular and building a clean, functional user experience.
+![Screenshot from 2025-04-22 14-56-51](https://github.com/user-attachments/assets/b9c3390b-7180-4922-b3c8-69c0cc677f21)
+
 
 ## Development server
 
